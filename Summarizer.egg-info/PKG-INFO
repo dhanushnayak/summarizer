@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: Summarizer
+Version: 0.1
+Summary: # summarizer
+Home-page: https://github.com/dhanushnayak/summarizer
+Author: Dhanush
+Author-email: dhanushnayak.ram@gmail.com
+Requires: transformers
+Requires: click
+Requires: tensorflow
+Requires: beautifulsoup4
+License-File: LICENSE

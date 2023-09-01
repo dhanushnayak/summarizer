@@ -1,0 +1,178 @@
+Let's apply the things that we've
+learned from command-line tools and working with
+different APIs to try
+to build something useful for machine learning.
+We're going to build
+a command-line tool here that we're going
+to make it a little bit
+better to work with
+Hugging Face and external APIs to do a summarization,
+so let's start with the requirements.
+I'm going to be installing a transformers here,
+which is coming from Hugging Face
+then the click framework to provide some of
+the nice command-line utility niceties
+of the framework itself to make it easier to build
+a command-line tool and then I
+tensorflow here at the ends to help us
+with the inferencing interactions with the model.
+Let's take a look at the setup, so again,
+we're going to do a Python command-line tool
+to summarize texts.
+The idea here is, I want to create the stool
+so that we can either go to
+the web and I'm going to show
+you one of these websites
+that I want to do some summarization.
+This is the Azure Machine Learning.
+Model management and deployment with
+Azure Machine Learning is
+the documentation for Microsoft,
+so I'm going to use this tool to hopefully
+try to summarize a little bit of what MLOps is.
+Additionally, we're also
+going to be looking at some examples.
+Here I haave texts example, I'm going to open it,
+so this is the definition of MLOps from Wikipedia.
+I'm going to use
+the command-line tool to summarize
+these texts and see how it goes.
+That's what we're going to do and let's take a look at
+some of the other files that are interesting here.
+We're going to go to the summarize application and
+open the main.py where all the magic is going to happen.
+I'm going to actually hide these,
+to make this a little bit better.
+We're importing click, which is again for the framework,
+the command-line tool framework helper
+and then we're going to get the helper from Hugging Face,
+which is the pipeline,
+then we're going to do some,
+potentially some requests and those requests
+will use the BeautifulSoup library.
+The PS4 library will need to install
+for that, and next,
+we're going to ignore some of
+the the copious amounts of warranties we're
+going to get from tensorflow because I am not in
+machine that has GPUs.
+We're going to have some supporting functions.
+This is going to be extract from URL,
+so we're going to make a request,
+potentially a request to some URL,
+hopefully the Microsoft one
+and then we're going to parse it,
+and then we're going to find all of
+the paragraphs and return that text.
+Actually this is the process function that is going to do
+all of the machine-learning portion bits of it.
+We're going to use the T5 small model and we're
+going to instantiate that with a pipeline.
+We're going to say we want some summarization
+and when I say that
+the maxlength is180 is going to
+report what that means as a return and then here,
+the command-line, tool, bits and pieces.
+When I say this is a command,
+it accepts a URL or
+a file and then depending if it's a URL or a file,
+we're going to process that text and then pass it to
+the process function at
+the very end and we're going to report it.
+Let's open up a terminal
+and I create a new terminal here.
+I already have the virtual environment here,
+activated or Conda environment.
+It doesn't matter if it's a Conda
+environment or a virtual environment,
+I'm going to make it a little bit bigger.
+I am going to do
+Python setup.py develop which will install
+these two and its dependencies locally and make
+that tool available to the command-line.
+Now we have the summary session
+or summarize rather script.
+I'm going to do dash,
+dash help and that's going to load the help menu.
+You did work great
+and you can see here we have the two options,
+one for a URL and the other one
+for the file and that's going to
+allow us to pass in basically the whole URL.
+Let's pass that in and we're going to say summarize dash,
+dash URL and then the full Microsoft.
+There we go, I'm going to say
+the full Microsoft URL here and then when I hit return,
+and then we're going to let these do the processing.
+There's a lot of output there,
+I decided to output the parsing from the website,
+so you can see here, while
+some information and models and
+data sets is automatically captured,
+you can add more information by using tags.
+There's a lot of text that
+is being processed from the URL,
+so that's going to help us have a
+good or review what is being processed.
+Now, we're also going to see several warnings
+from Hugging Face because I am using the model
+as is without taking care of the padding and
+the sequences that I should be properly taking care of.
+But the summarization is complete,
+as you can see here and now we get
+these nice summary at the very end.
+It says, it's based on DevOps principles and
+practices that increase the efficiency of
+workflows and machine-learning pipeline can contain
+steps from data preparation to feature extraction,
+to hyperparameter, tuning to model evaluation so great.
+That was a great summarization of
+all of these wall of texts that you can see here.
+Next, I'm going to clear this
+out so we can make it a little bit better.
+Next, we're going to use the summarize tool.
+This is a summarize tool right here,
+takes a second to load.
+We're going to use some of the examples.
+If you remember, if I go here to examples,
+we have these MLOps,
+blob of text,
+so when I use that there,
+and when I say summarize,
+when I say dash, dash file this time,
+and when I say accent when I pass the path to it,
+and when I say MLOps,
+that Wikipedia that text and when I run that.
+We should see output similar to what we saw when we were
+running the summarization process for Microsoft.
+Now, the one thing that wanted to see,
+is we're not going to see that wall of text.
+There you go and some recession is
+complete and in this case he was MLOps or
+ML-Ops is a set of practices that aims to deployment
+the machinery models in
+production reliably and efficiently.
+The word is compound of
+machine learning and it continues development,
+practice of DevOps in the software fields, so great.
+That is the things that you can do by
+building a powerful command-line tool
+that reuses existing models,
+in this case, we're using
+the T5 model and we're using
+a pre-existing model for doing powerful summarization.
+There's definitely tweaks that we
+can do here, especially on main.py.
+If we go here, you can see that the summarization,
+the summarizer here,
+object can have a better configuration
+to avoid all of those warnings and perhaps
+this request can be
+done a little bit nicer and not just only
+grab anything that has a P tag on the HTML.
+Hopefully this is useful and gives you
+the foundational knowledge to take these tweaked or
+even come up with a new machine learning
+command-line tools or machine-learning
+related command-line tools
+that you can interact and build yourself. 

@@ -1,0 +1,4 @@
+transformers
+click
+tensorflow
+beautifulsoup4

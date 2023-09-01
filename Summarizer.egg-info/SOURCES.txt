@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+Summarizer.egg-info/PKG-INFO
+Summarizer.egg-info/SOURCES.txt
+Summarizer.egg-info/dependency_links.txt
+Summarizer.egg-info/entry_points.txt
+Summarizer.egg-info/top_level.txt
+summarize/__init__.py
+summarize/main.py
