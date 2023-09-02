@@ -9,4 +9,5 @@ Requires: transformers
 Requires: click
 Requires: tensorflow
 Requires: beautifulsoup4
+Requires: black
 License-File: LICENSE
