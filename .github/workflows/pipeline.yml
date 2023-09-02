@@ -9,9 +9,9 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            
+
         - name: Install Dependies
           run: make install
 
-        - format: Formatting
+        - name: Formatting
           run: make format
