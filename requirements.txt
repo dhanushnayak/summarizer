@@ -2,3 +2,4 @@ transformers
 click
 tensorflow
 beautifulsoup4
+black
