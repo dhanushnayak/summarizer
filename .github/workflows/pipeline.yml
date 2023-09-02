@@ -1,0 +1,17 @@
+name: Pipeline.yml
+
+on:
+    push:
+        branches: [ "main" ]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            
+        - name: Install Dependies
+          run: make install
+
+        - format: Formatting
+          run: make format
